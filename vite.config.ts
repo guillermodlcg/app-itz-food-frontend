@@ -12,9 +12,16 @@ export default defineConfig({
     },
   },
   server: {
-    https:{
-      key: 'private.key',
-      cert: 'certificate.crt'
+    https: {
+      key: 'myfoodapp-privateKey-pkcs8.key',
+      cert: 'myfoodapp.crt'
+    },
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        secure: false
+      }
     }
   }
 })
