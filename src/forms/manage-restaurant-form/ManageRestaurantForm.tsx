@@ -60,7 +60,7 @@ export default function ManageRestaurantFrom({ onSave, isLoading, restaurante }:
         formData.append("city", formDataJson.city);
         formData.append("country", formDataJson.country);
         formData.append("deliveryPrice", (formDataJson.deliveryPrice * 100).toString());
-        formData.append("estimateDeliveyTime", formDataJson.estimateDeleveryTime.toString());
+        formData.append("estimatedDeliveryTime", formDataJson.estimateDeleveryTime.toString());
 
         formDataJson.cuisines.forEach((cuisine, index) => {
             formData.append(`cuisine[${index}]`, cuisine);
