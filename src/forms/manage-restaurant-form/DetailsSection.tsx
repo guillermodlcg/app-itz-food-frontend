@@ -65,7 +65,7 @@ export default function DetailsSection() {
           )}
         />
         <FormField control={control}
-          name="estimateDeleveryTime"
+          name="estimatedDeliveryTime"
           render={({ field }) => (
             <FormItem className="w-full md:max-w-[50%]">
               <FormLabel>Tiempo estimado de entrega (minutos)</FormLabel>

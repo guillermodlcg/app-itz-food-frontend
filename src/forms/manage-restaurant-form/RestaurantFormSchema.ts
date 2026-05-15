@@ -15,7 +15,7 @@ export const formSchema= z.object({
         required_error: 'El precio de entrega es requerido',
         invalid_type_error: 'El precio debe ser un numero valido'
     }).min(1, { message: 'El precio de entrega es requerido' }),
-    estimateDeleveryTime: z.coerce.number({
+    estimatedDeliveryTime: z.coerce.number({
         required_error: 'El tiempo estimado de entrega es requerido',
         invalid_type_error: 'El tiempo estimado de entrega debe ser un numero valido'
     }).min(1, { message: 'El tiempo estimado de entrega es requerido' }),

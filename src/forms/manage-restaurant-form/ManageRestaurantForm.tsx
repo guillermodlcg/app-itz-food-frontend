@@ -31,7 +31,7 @@ export default function ManageRestaurantFrom({ onSave, isLoading, restaurante }:
             city: "",
             country: "",
             deliveryPrice: 0,
-            estimateDeleveryTime: 0,
+            estimatedDeliveryTime: 0,
             cuisines: [],
             menuItems: [{ name: "", price: 0 }],
             imagenUrl: ""
@@ -45,7 +45,7 @@ export default function ManageRestaurantFrom({ onSave, isLoading, restaurante }:
             city: restaurante.city,
             country: restaurante.country,
             deliveryPrice: restaurante.deliveryPrice / 100,
-            estimateDeleveryTime: restaurante.estimateDeleveryTime,
+            estimatedDeliveryTime: restaurante.estimatedDeliveryTime,
             cuisines: restaurante.cuisines,
             menuItems: restaurante.menuItems,
             imagenUrl: restaurante.imageUrl,
@@ -60,7 +60,7 @@ export default function ManageRestaurantFrom({ onSave, isLoading, restaurante }:
         formData.append("city", formDataJson.city);
         formData.append("country", formDataJson.country);
         formData.append("deliveryPrice", (formDataJson.deliveryPrice * 100).toString());
-        formData.append("estimatedDeliveryTime", formDataJson.estimateDeleveryTime.toString());
+        formData.append("estimatedDeliveryTime", formDataJson.estimatedDeliveryTime.toString());
 
         formDataJson.cuisines.forEach((cuisine, index) => {
             formData.append(`cuisine[${index}]`, cuisine);
