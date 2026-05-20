@@ -6,6 +6,7 @@ import SearchBar from '@/components/Search/SearchBar';
 import SearchResultInfo from '@/components/Search/SearchResultInfo';
 import CuisinesFilter from '@/components/Search/CuisinesFilter';
 import SortOptionsDropdown from '@/components/Search/SortOptionsDropdown';
+import PaginationSelector from '@/components/Search/PaginationSelector';
 import { useState } from 'react';
 import { useParams } from 'react-router';
 
@@ -83,6 +84,11 @@ export default function SearchPage() {
                 {results.data.map((restaurante, key) => (
                     <SearchResultCard restaurante={restaurante} key={key} />
                 ))}
+                <PaginationSelector
+                    page={searchState.page}
+                    pages={results.pagination.pages}
+                    onPageChange={(page) => setSearchState((prev) => ({ ...prev, page }))}
+                />
             </div>
         </div>
     )
